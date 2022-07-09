@@ -306,13 +306,6 @@ module.exports = function(eleventyConfig) {
 		return `https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${getWeeklyServiceCacheBuster()}/`;
 	});
 
-	eleventyConfig.addPairedShortcode("starterMessage", (htmlContent) => {
-		if(process.env.SITE_NAME !== "speedlify") {
-			return htmlContent;
-		}
-		return "";
-	});
-
 	// Assets
 	eleventyConfig.addPassthroughCopy({
 		"./node_modules/chartist/dist/chartist.js": "chartist.js",
